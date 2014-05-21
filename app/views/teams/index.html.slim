@@ -1,0 +1,23 @@
+h1 Listing teams
+
+table.table.table-stripped
+  thead
+    tr
+      th = sort_link(@q, :name)
+      th = Team.human_attribute_name(:mutants)
+      th = t('actions')
+
+  tbody
+    - @teams.each do |team|
+      tr
+        td = team.name
+        td = team.mutants.map(&:name).join(', ')
+        td
+          = link_to t('edit'), edit_team_path(team), class: 'btn btn-default btn-sm'
+          = ' '
+          = link_to t('destroy'), team, data: {:confirm => t('confirm_msg')},
+            :method => :delete, class: 'btn btn-default btn-sm'
+
+br
+
+= link_to t('model.new', model: 'team'), new_team_path, class: 'btn btn-primary btn-sm'

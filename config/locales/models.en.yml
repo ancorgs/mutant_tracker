@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      mutant:
+        one: 'mutant'
+        other: 'mutants'
+      team:
+        one: 'team'
+        other: 'teams'
+
+    attributes:
+      mutant:
+        name: 'name'
+        superpowers: 'superpowers'
+        teams: 'teams'
+      team:
+        name: 'name'
+        mutants: 'mutants'
+  activehash:
+    task_status:
+      new: 'new'
+      progress: 'in progress'
+      canceled: 'canceled'
+      done: 'done'

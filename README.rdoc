@@ -1,0 +1,27 @@
+= Mutant Tracker
+
+A pet Ruby on Rails project to try Minitest::Spec (I'm more a RSpec user), old
+plain RDoc (I usually use YARD) and Slim. Nothing really interesting for most
+people.
+
+== Getting started
+
+If you really want to take a look on it. The setup is the standard for any Ruby
+on Rails project. That is:
+
+  $ git clone https://github.com/ancorgs/mutant_tracker
+  $ cd mutant_tracker
+  $ bundle
+  $ cp config/database.example.yml config/database.yml
+  $ rake db:create db:migrate db:seed
+  $ rails s
+
+For running the tests:
+
+  $ rake test
+
+For generating the documentation
+
+  $ rake doc:app
+
+Tested with Ruby 2.1.

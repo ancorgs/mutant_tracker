@@ -1,0 +1,14 @@
+/ navigation styled for Bootstrap 3.0
+.navbar.navbar-inverse.navbar-fixed-top[ role="navigation"]
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.sr-only t('menu.toggle')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to t('application_title'), root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        = nav_tab 'menu.teams', teams_path, :controller => 'teams'
+        = nav_tab 'menu.mutants', mutants_path, :controller => 'mutants'

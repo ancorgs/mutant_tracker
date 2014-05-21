@@ -1,0 +1,10 @@
+= simple_form_for @mutant do |f|
+  = f.error_notification
+  
+  = f.input :name
+  = f.input :superpowers
+  = f.association :teams
+  
+  = f.button :submit
+  = ' '
+  = link_to :back, mutants_path, class: 'btn btn-default'
