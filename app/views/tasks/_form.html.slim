@@ -1,0 +1,12 @@
+= simple_form_for @task do |f|
+  = f.error_notification
+  
+  = f.input :title
+  = f.input :description
+  = f.input :due_date, as: :dpicker
+  = f.input :state_id, collection: @states, label_method: 'title', include_blank: false
+  = f.association :team
+  
+  = f.button :submit
+  = ' '
+  = link_to t('back'), tasks_path, class: 'btn btn-default'

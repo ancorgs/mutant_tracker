@@ -10,5 +10,6 @@
       = link_to t('application_title'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       ul.nav.navbar-nav
+        = nav_tab 'menu.tasks', tasks_path, :controller => 'tasks'
         = nav_tab 'menu.teams', teams_path, :controller => 'teams'
         = nav_tab 'menu.mutants', mutants_path, :controller => 'mutants'

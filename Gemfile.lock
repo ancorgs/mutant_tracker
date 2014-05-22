@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/97jaz/active_hash.git
+  revision: 21172598040b90bcc25e3f5475a4fc7644431198
+  branch: 4.1-unstable
+  specs:
+    active_hash (1.3.0)
+      activesupport (>= 2.2.2)
+
+GIT
   remote: git://github.com/activerecord-hackery/ransack.git
   revision: 79fe700bca7d69f30a44898635fdddd3a8ef486d
   branch: rails-4.1
@@ -172,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash!
   bootstrap-sass (~> 3.1.1)
   capybara_minitest_spec
   coffee-rails (~> 4.0.0)

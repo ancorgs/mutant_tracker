@@ -43,8 +43,10 @@ gem 'simplecov', :group => :test
 # Use Slim for the templates
 gem 'slim-rails'
 
-# Simple Form to have cleaner templates, let's try the upcoming release with
-# Bootstrap 3 compatibility
+# Simple Form and ShowFor to have cleaner templates
+# ShowFor looks quite incompatible with Bootstrap 3 at this moment
+# gem 'show_for'
+# Let's try the upcoming release of Simple Form with Bootstrap 3 compatibility
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 
 # Ransack for easy filters. Let's try this Rails 4.1 branch
@@ -52,6 +54,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # Foreigner to have real foreign keys in the database
 gem 'foreigner'
+
+# ActiveHash for convenient management of enums (Rails 4.1 branch again)
+gem 'active_hash', github: '97jaz/active_hash', branch: '4.1-unstable'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

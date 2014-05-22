@@ -34,6 +34,7 @@ en:
     destroyed: '%{model} was successfully deleted.'
   menu:
     mutants: 'Mutants'
+    tasks: 'Tasks'
     teams: 'Teams'
     toggle: 'Toggle navigation'
 
