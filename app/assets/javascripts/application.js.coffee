@@ -10,3 +10,7 @@
 $(document).ready ->
   $('select[multiple]').multiselect
     enableFiltering: true
+
+  $('input.dpicker.date-with-time').datetimepicker()
+  $('input.dpicker.date-without-time').datetimepicker
+    minView: 2
