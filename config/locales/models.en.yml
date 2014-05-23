@@ -7,6 +7,9 @@ en:
       team:
         one: 'team'
         other: 'teams'
+      task:
+        one: 'task'
+        other: 'tasks'
 
     attributes:
       mutant:
@@ -16,6 +19,15 @@ en:
       team:
         name: 'name'
         mutants: 'mutants'
+      task:
+        title: 'title'
+        description: 'description'
+        due_date: 'due date'
+        state: 'state'
+        state_id: 'state'
+        team: 'asignee'
+        team_id: 'asignee'
+
   activehash:
     task_status:
       new: 'new'
