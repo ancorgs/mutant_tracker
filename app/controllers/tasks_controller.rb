@@ -15,6 +15,14 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = @resource = Task.new
+    # Just in case the creation fails
+    flash[:q] = params[:q]
+  end
+
+  # GET /task/1/edit
+  def edit
+    # Just in case the update fails
+    flash[:q] = params[:q]
   end
 
   # POST /tasks
@@ -23,6 +31,8 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_url, notice: I18n.t('model.created', model: 'task')
     else
+      # Keep the filter between failures
+      flash.keep(:q)
       render :new
     end
   end
@@ -32,6 +42,8 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to tasks_url, notice: I18n.t('model.updated', model: 'task')
     else
+      # Keep the filter between failures
+      flash.keep(:q)
       render :edit
     end
   end

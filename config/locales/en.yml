@@ -24,6 +24,8 @@ en:
   application_title: 'Mutant Tracker'
   confirm_msg: 'Are you sure?'
   edit: 'Edit'
+  filter: 'Filter'
+  reset_search: 'All'
   show: 'Show'
   destroy: 'Destroy'
   model:

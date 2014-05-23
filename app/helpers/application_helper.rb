@@ -21,4 +21,15 @@ module ApplicationHelper
     end
     content_tag(:li, link_to(t(label), path), :class => css)
   end
+
+  # Outputs a link to the list of resources keeping the Ransack filters (stored
+  # in params or flash)
+  #
+  # ==== Attributes
+  #
+  # [+klass+]   Class of the resource, to infer the helper name
+  def back_link(klass)
+    method = "#{klass.to_s.tableize}_path"
+    link_to t('back'), send(method, :q => params[:q] || flash[:q]), class: 'btn btn-default'
+  end
 end
