@@ -1,6 +1,6 @@
 h1 Listing teams
 
-table.table.table-stripped
+table.table.table-stripped#teams
   thead
     tr
       th = sort_link(@q, :name)
@@ -9,10 +9,10 @@ table.table.table-stripped
 
   tbody
     - @teams.each do |team|
-      tr
-        td = team.name
-        td = team.mutants.map(&:name).join(', ')
-        td
+      tr[id="team-#{team.id}"]
+        td.name = team.name
+        td.mutants = team.mutants.map(&:name).join(', ')
+        td.actions
           = link_to t('edit'), edit_team_path(team), class: 'btn btn-default btn-sm'
           = ' '
           = link_to t('destroy'), team, data: {:confirm => t('confirm_msg')},

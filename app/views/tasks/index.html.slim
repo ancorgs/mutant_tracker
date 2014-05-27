@@ -18,7 +18,7 @@ nav.navbar.navbar-default
         '
         = link_to t('reset_search'), tasks_path, class: 'btn btn-default'
 
-table.table.table-stripped
+table.table.table-stripped#tasks
   thead
     tr
       th = sort_link(@q, :title)
@@ -29,11 +29,11 @@ table.table.table-stripped
 
   tbody
     - @tasks.each do |task|
-      tr
-        td = task.title
-        td = task.due_date ? l(task.due_date) : ''
-        td = task.state.title
-        td = task.team.try(:name)
+      tr[id="task-#{task.id}"]
+        td.title = task.title
+        td.due_date = task.due_date ? l(task.due_date) : ''
+        td.state = task.state.title
+        td.team = task.team.try(:name)
         td
           = link_to t('show'), task_path(task, q: params[:q]), class: 'btn btn-default btn-sm'
           = ' '

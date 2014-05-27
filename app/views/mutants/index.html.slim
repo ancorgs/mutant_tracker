@@ -1,6 +1,6 @@
 h1 Listing mutants
 
-table.table.table-stripped
+table.table.table-stripped#mutants
   thead
     tr
       th = sort_link(@q, :name)
@@ -10,11 +10,11 @@ table.table.table-stripped
 
   tbody
     - @mutants.each do |mutant|
-      tr
-        td = mutant.name
-        td = mutant.superpowers
-        td = mutant.teams.map(&:name).join(', ')
-        td
+      tr[id="mutant-#{mutant.id}"]
+        td.name = mutant.name
+        td.superpowers = mutant.superpowers
+        td.teams = mutant.teams.order(:name).map(&:name).join(', ')
+        td.actions
           = link_to t('edit'), edit_mutant_path(mutant), class: 'btn btn-default btn-sm'
           = ' '
           = link_to t('destroy'), mutant, data: {:confirm => t('confirm_msg')},
